@@ -14,6 +14,10 @@ impl ParseBigIntError {
     pub(crate) const EMPTY: Self = Self {
         kind: ParseBigIntErrorKind::Empty,
     };
+
+    pub fn kind(&self) -> ParseBigIntErrorKind {
+        self.kind.clone()
+    }
 }
 
 #[derive(Clone, PartialEq, Eq, Debug)]
@@ -56,6 +60,10 @@ impl BigIntConvertionError {
     pub(crate) const UNDERFLOW: Self = Self {
         kind: BigIntConvertionErrorKind::Underflow,
     };
+
+    pub fn kind(&self) -> BigIntConvertionErrorKind {
+        self.kind.clone()
+    }
 }
 
 #[derive(Clone, PartialEq, Eq, Debug)]
